@@ -1,5 +1,9 @@
 # FFT Benchmarking
 
+This script runs a simple suite of FFT benchmarks by varying:
+1. the routine used
+2. the nearest higher and nearest lower dimensions of the array
+
 Use as follows:
 
 ``
