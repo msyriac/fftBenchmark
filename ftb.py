@@ -1,3 +1,5 @@
+#/bin/python
+
 from numpy.fft import fft2 as nfft2
 from scipy.fftpack import fft2 as sfft2
 

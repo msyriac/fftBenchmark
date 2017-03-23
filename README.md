@@ -1,3 +1,7 @@
 # FFT Benchmarking
 
-Use 
+Use as follows:
+
+``
+python ftb.py Ny Nx num_tests
+``
