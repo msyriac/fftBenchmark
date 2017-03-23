@@ -2,7 +2,7 @@
 
 This script runs a simple suite of FFT benchmarks by varying:
 1. the routine used
-2. the nearest higher and nearest lower dimensions of the array
+2. the nearest higher and nearest lower FFT-friendly dimensions of the array
 
 Use as follows:
 
