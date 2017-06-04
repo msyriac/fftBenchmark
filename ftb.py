@@ -1,4 +1,4 @@
-#/bin/python
+#!/bin/python
 
 from numpy.fft import fft2 as nfft2
 from scipy.fftpack import fft2 as sfft2
@@ -42,42 +42,42 @@ for Ny,Nx,label in [(Nyorig,Nxorig,"original"),(Nydown,Nxdown,"smaller"),(Nyup,N
 
 
 
-    st = time.time()
-    for i in range(N):
-        B = nfft2(A)
-    elapsed = time.time()-st
-    print "Numpy: ", '{:.2f}'.format(elapsed*1000./N), " milliseconds."
+    # st = time.time()
+    # for j in range(N):
+    #     B = nfft2(A)
+    # elapsed = time.time()-st
+    # print "Numpy: ", '{:.2f}'.format(elapsed*1000./N), " milliseconds."
+
+    # st = time.time()
+    # for j in range(N):
+    #     B = sfft2(A)
+    # elapsed = time.time()-st
+    # print "Scipy: ", '{:.2f}'.format(elapsed*1000./N), " milliseconds."
+
+    # B = pnfft2(A)
+    # st = time.time()
+    # for j in range(N):
+    #     B = pnfft2(A)
+    # elapsed = time.time()-st
+    # print "pyfftw-numpy: ", '{:.2f}'.format(elapsed*1000./N), " milliseconds."
+
+
+    # st = time.time()
+    # for j in range(N):
+    #     B = psfft2(A)
+    # elapsed = time.time()-st
+    # print "pyfftw-scipy: ", '{:.2f}'.format(elapsed*1000./N), " milliseconds."
+
 
     st = time.time()
-    for i in range(N):
-        B = sfft2(A)
-    elapsed = time.time()-st
-    print "Scipy: ", '{:.2f}'.format(elapsed*1000./N), " milliseconds."
-
-    B = pnfft2(A)
-    st = time.time()
-    for i in range(N):
-        B = pnfft2(A)
-    elapsed = time.time()-st
-    print "pyfftw-numpy: ", '{:.2f}'.format(elapsed*1000./N), " milliseconds."
-
-
-    st = time.time()
-    for i in range(N):
-        B = psfft2(A)
-    elapsed = time.time()-st
-    print "pyfftw-scipy: ", '{:.2f}'.format(elapsed*1000./N), " milliseconds."
-
-
-    st = time.time()
-    for i in range(N):
+    for j in range(N):
         B = pnfft2(A,threads=nthread_fft)
     elapsed = time.time()-st
     print "Threaded pyfftw-numpy: ", '{:.2f}'.format(elapsed*1000./N), " milliseconds."
 
 
     st = time.time()
-    for i in range(N):
+    for j in range(N):
         B = psfft2(A,threads=nthread_fft)
     elapsed = time.time()-st
     print "Threaded pyfftw-scipy: ", '{:.2f}'.format(elapsed*1000./N), " milliseconds."
@@ -85,7 +85,7 @@ for Ny,Nx,label in [(Nyorig,Nxorig,"original"),(Nydown,Nxdown,"smaller"),(Nyup,N
 
     B = fftfast.fft(A,axes=[-2,-1],flags=['FFTW_MEASURE'])
     st = time.time()
-    for i in range(N):
+    for j in range(N):
         B = fftfast.fft(A,axes=[-2,-1])
     elapsed = time.time()-st
     print "Enlib: ", '{:.2f}'.format(elapsed*1000./N), " milliseconds."
